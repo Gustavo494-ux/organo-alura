@@ -60,7 +60,6 @@ function App() {
   }
 
   function mudarCorDoTime(cor,id){
-    debugger
     setTimes(times.map(time => {
       if (time.id === id){
         time.cor = cor;
@@ -75,6 +74,7 @@ function App() {
 
   return (
     <div className="App">
+      <input type='color' value='#b51678'/>
       <Banner />    
       <Formulario
           cadastrarTime={cadastrarTime}
