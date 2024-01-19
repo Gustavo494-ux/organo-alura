@@ -8,13 +8,13 @@ const Time = ({time, colaboradores,aoDeletar, mudarCor}) => {
     
     return (
         ( colaboradores.length > 0) && <section className='time' style={styleSection}>
-            <input onChange={evento => mudarCor(evento.target.value,time.nome)} value={time.cor} type="color" className='input-cor' />
+            <input onChange={evento => mudarCor(evento.target.value,time.id)} value={time.cor} type="color" className='input-cor' />
             <h3 style={styleH3}>{time.nome}</h3>
             <div className='colaboradores'>
                 {colaboradores.map( colaborador => {
                         return <Colaborador
                             corDeFundo={time.cor }
-                            key={colaborador.nome}
+                            key={colaborador.id}
                             colaborador={colaborador}
                             time={colaborador.time}
 
