@@ -72,9 +72,19 @@ function App() {
     setTimes([...times,{...novoTime,id: uuidv4()}])
   }
 
+  function resolverFavorito(id){
+//    setColaboradores(colaboradores.map(colaborador => {
+//      if (colaborador.id === id) colaborador.favorito = !colaborador.favorito
+//    }))
+
+    setColaboradores(colaboradores.map(colaborador => {
+      if (colaborador.id === id) colaborador.favorito = !colaborador.favorito;
+      return colaborador
+    }))
+  }
+
   return (
     <div className="App">
-      <input type='color' value='#b51678'/>
       <Banner />    
       <Formulario
           cadastrarTime={cadastrarTime}
@@ -83,6 +93,7 @@ function App() {
       />
         {times.map(time =>
           <Time
+            aoFavoritar={resolverFavorito}
             mudarCor={mudarCorDoTime}
             key={time.nome}
             nome={time.nome}
